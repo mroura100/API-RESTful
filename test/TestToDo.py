@@ -5,7 +5,7 @@ from botocore.exceptions import ClientError
 from moto import mock_dynamodb2
 from pprint import pprint
 import sys
-sys.path.insert(1, '../todos/')
+sys.path.insert(1, '../hello_world/')
 import warnings
 import time
 
@@ -21,8 +21,8 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.uuid = "123e4567-e89b-12d3-a456-426614174000"
         self.text = "Aprender DevOps y Cloud en la UNIR"
 
-
-        from ToDoCreateTable import create_todo_table
+        #from tests import *
+        from tests.unit.ToDoCreateTable import create_todo_table
         self.table = create_todo_table(self.dynamodb)
         self.table_local = create_todo_table()
 
